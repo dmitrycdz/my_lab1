@@ -2,7 +2,7 @@ package software_engineering;
 import java.awt.*;   
 import java.awt.event.*;   
 import javax.swing.*;   
-//for lab3 qwertyuiop
+//for lab3 qwertyuiopb2b2b2b2b2b2b
 public class login extends JFrame implements ActionListener   
 {      
 	  private static final long serialVersionUID = 1L;
