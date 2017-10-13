@@ -2,11 +2,15 @@ package software_engineering;
 import java.awt.*;   
 import java.awt.event.*;   
 import javax.swing.*;   
+<<<<<<< HEAD
 //for lab3 qwertyuiopb1b1b1b1b1b
 //for lab3 qwertyuiop
 //c4c4c 4c4c4cccccc44
 //for lab3 qwertyuiopb2b2b2b2b2b2b
 //zxzxczxccccccscfdfdfdfd
+=======
+
+>>>>>>> 4b2da2621eb26c297656c410797c283182d07b32
 public class login extends JFrame implements ActionListener   
 {      
 	  private static final long serialVersionUID = 1L;
@@ -41,10 +45,17 @@ public class login extends JFrame implements ActionListener
 	     this.add(loginname );     //创建文本行   
 	     this.add(this.blank1);   
 	     this.add(label_2);   
+<<<<<<< HEAD
 	     this.add(password);             //创建20列的文本行   
 	     this.add(this.blank2);   
 	     this.add(this.blank3);   
 	     this.add(b_subit);              //创建按钮   
+=======
+	     this.add(password);             
+	     this.add(this.blank2);   
+	     this.add(this.blank3);   
+	     this.add(b_subit);            
+>>>>>>> 4b2da2621eb26c297656c410797c283182d07b32
 	     this.add(this.blank4);
 	     this.add(b_reset);   
 	     label_1.setFont(font1);

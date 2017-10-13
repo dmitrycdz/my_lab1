@@ -1,7 +1,11 @@
 package software_engineering;
+<<<<<<< HEAD
 //for lab3 asdfghjklbbbbbb1111111111111
 //for lab3 asdfghjkl
 //c4c4c4c4c4cc44nvhvhvvzjvcjhaqqqqqqqqqqqqqqqqqqqqq
+=======
+
+>>>>>>> 4b2da2621eb26c297656c410797c283182d07b32
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -496,7 +500,11 @@ public class Lab1_Pair{
 		Dij D = new Dij(vertexNum);
 		D.dijkstra(w1,head);
 		if(D.dist[w2].d == INF){
+<<<<<<< HEAD
 			ans += "没有路径";
+=======
+			ans += "不可达";
+>>>>>>> 4b2da2621eb26c297656c410797c283182d07b32
 			return ans;
 		}
 		waypoint = new ArrayList<ArrayList<Integer>>();

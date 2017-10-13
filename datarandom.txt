@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 study->of->this->word
+=======
+developed->and->existed->in->internet->by->the->meaning->of->this->word
+>>>>>>> 4b2da2621eb26c297656c410797c283182d07b32

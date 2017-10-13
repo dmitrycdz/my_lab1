@@ -1,7 +1,10 @@
 package software_engineering;
+<<<<<<< HEAD
 //b1b1b1b1b1b1b1
 // c4c4c4c4c4cc4cqqqqqqqqqqqqqqqqqqqqqqqqq
 //b2b2b2b2b2b2bbbhflkahfikujagfkgaifuj
+=======
+>>>>>>> 4b2da2621eb26c297656c410797c283182d07b32
 //GraphViz.java - a simple API to call dot from Java programs
 /*$Id$*/
 /*
@@ -80,7 +83,11 @@ public class GraphViz
 	 * Where is your dot program located? It will be called externally.
 	 */
 	// private static String DOT = "/usr/bin/dot"; // Linux
+<<<<<<< HEAD
 	private static String DOT = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe"; // Windows
+=======
+	private static String DOT = "D:\\Graphviz2.38\\bin\\dot.exe"; // Windows
+>>>>>>> 4b2da2621eb26c297656c410797c283182d07b32
 	
 	/**
 	 * The source of the graph written in dot language.

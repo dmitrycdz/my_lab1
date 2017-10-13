@@ -1,8 +1,12 @@
 package software_engineering;
+<<<<<<< HEAD
 //b1b1b1b1b1bbbbb
 //for lab3 zxcvbnm
 //ccccccc44444cccqqqqqqqqqqqqqqqqqqqqqqq
 //for lab3 zxcvbnmb2b2b2b2b2b2bbb
+=======
+
+>>>>>>> 4b2da2621eb26c297656c410797c283182d07b32
 import java.io.IOException;
 import java.awt.event.ActionListener;   
 import java.awt.event.ActionEvent;   
@@ -17,7 +21,10 @@ import java.io.OutputStreamWriter;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+<<<<<<< HEAD
 import java.util.regex.*;
+=======
+>>>>>>> 4b2da2621eb26c297656c410797c283182d07b32
 class FirstPage{ //Ê×Ò³
     public static String showmessage(){   
     	String str = "";
@@ -493,9 +500,21 @@ class NewInputText extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e){   
 	     if(e.getSource() == tb){
+<<<<<<< HEAD
 	    	 String temp;
 	    	 temp = text.getText().replaceAll("[^a-zA-Z]"," ");
 	    	 text_user.setText(Lab1_Pair.generateNewText(temp));
+=======
+	    	 char[] ch = text.getText().toCharArray();
+	    	 String result = "";  
+	    	 for(int i = 0; i < ch.length; i++){  
+	    		 if((ch[i] >= 'a' && ch[i] <= 'z')||(ch[i] >= 'A' && ch[i] <= 'Z')||ch[i]==' ')
+	    			 result += ch[i];
+	    		 else
+	    			 result += " ";
+	    	 }  
+	    	 text_user.setText(Lab1_Pair.generateNewText(result));
+>>>>>>> 4b2da2621eb26c297656c410797c283182d07b32
 	    	 //System.out.print(text.getText());  
 	      }
    }    
