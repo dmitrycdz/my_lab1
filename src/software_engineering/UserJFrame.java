@@ -15,7 +15,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.util.regex.*;
-class FirstPage{ //Ê×Ò³
+class FirstPage{ //é¦–é¡µ
     public static String showmessage(){   
     	String str = "";
     	String string = "";
@@ -42,17 +42,17 @@ class FirstPage{ //Ê×Ò³
     }   
 }  
 
-class MenuBar extends JFrame implements ActionListener{ //²Ëµ¥À¸
+class MenuBar extends JFrame implements ActionListener{ //èœå•æ 
 	private static final long serialVersionUID = 1L;
 	JMenuBar menuBar = new JMenuBar();
-    JMenu file = new JMenu("Ñ¡Ïî(F)");
-    JMenuItem open1 = new JMenuItem("¹¦ÄÜĞèÇó1");
-    JMenuItem open2 = new JMenuItem("¹¦ÄÜĞèÇó2");
-    JMenuItem open3 = new JMenuItem("¹¦ÄÜĞèÇó3");
-    JMenuItem open4 = new JMenuItem("¹¦ÄÜĞèÇó4");
-    JMenuItem open5 = new JMenuItem("¹¦ÄÜĞèÇó5");
-    JMenuItem open6 = new JMenuItem("¹¦ÄÜĞèÇó6");
-    JMenuItem quit = new JMenuItem("ÍË³ö");
+    JMenu file = new JMenu("é€‰é¡¹(F)");
+    JMenuItem open1 = new JMenuItem("åŠŸèƒ½éœ€æ±‚1");
+    JMenuItem open2 = new JMenuItem("åŠŸèƒ½éœ€æ±‚2");
+    JMenuItem open3 = new JMenuItem("åŠŸèƒ½éœ€æ±‚3");
+    JMenuItem open4 = new JMenuItem("åŠŸèƒ½éœ€æ±‚4");
+    JMenuItem open5 = new JMenuItem("åŠŸèƒ½éœ€æ±‚5");
+    JMenuItem open6 = new JMenuItem("åŠŸèƒ½éœ€æ±‚6");
+    JMenuItem quit = new JMenuItem("é€€å‡º");
     static ShowDirectedGraph showgraph = new ShowDirectedGraph();
 	static QueryBridgeWords querybridgewords = new QueryBridgeWords();
 	static NewInputText newinputtext = new NewInputText();
@@ -64,12 +64,12 @@ class MenuBar extends JFrame implements ActionListener{ //²Ëµ¥À¸
 	Graph graph;
 	String filestr = "";
 	public MenuBar(){
-        // ÉèÖÃÖú¼Ç·ûÎªF£¬°´ÏÂALT + F ¿ÉÒÔ´¥·¢¸Ã²Ëµ¥
+        // è®¾ç½®åŠ©è®°ç¬¦ä¸ºFï¼ŒæŒ‰ä¸‹ALT + F å¯ä»¥è§¦å‘è¯¥èœå•
         file.setMnemonic('F');
         file.setFont(new Font("SansSerif",Font.BOLD,18));
 	}
 	public JMenuBar menuBar(){
-		// ²Ëµ¥À¸
+		// èœå•æ 
         open1.setFont(new Font("SansSerif",Font.BOLD,15));
         open2.setFont(new Font("SansSerif",Font.BOLD,15));
         open3.setFont(new Font("SansSerif",Font.BOLD,15));
@@ -78,17 +78,17 @@ class MenuBar extends JFrame implements ActionListener{ //²Ëµ¥À¸
         open6.setFont(new Font("SansSerif",Font.BOLD,15));
         quit.setFont(new Font("SansSerif",Font.BOLD,15));
         file.add(open1);
-        file.addSeparator(); // ÉèÖÃ²Ëµ¥·Ö¸ô·û
+        file.addSeparator(); // è®¾ç½®èœå•åˆ†éš”ç¬¦
         file.add(open2);
-        file.addSeparator(); // ÉèÖÃ²Ëµ¥·Ö¸ô·û
+        file.addSeparator(); // è®¾ç½®èœå•åˆ†éš”ç¬¦
         file.add(open3);
-        file.addSeparator(); // ÉèÖÃ²Ëµ¥·Ö¸ô·û
+        file.addSeparator(); // è®¾ç½®èœå•åˆ†éš”ç¬¦
         file.add(open4);
-        file.addSeparator(); // ÉèÖÃ²Ëµ¥·Ö¸ô·û
+        file.addSeparator(); // è®¾ç½®èœå•åˆ†éš”ç¬¦
         file.add(open5);
-        file.addSeparator(); // ÉèÖÃ²Ëµ¥·Ö¸ô·û
+        file.addSeparator(); // è®¾ç½®èœå•åˆ†éš”ç¬¦
         file.add(open6);
-        file.addSeparator(); // ÉèÖÃ²Ëµ¥·Ö¸ô·û
+        file.addSeparator(); // è®¾ç½®èœå•åˆ†éš”ç¬¦
         file.add(quit);
 
         menuBar.add(file);
@@ -168,19 +168,19 @@ class MenuBar extends JFrame implements ActionListener{ //²Ëµ¥À¸
 
 }
 
-class fileChooser{    //Ñ¡ÔñÎÄ¼ş
+class fileChooser{    //é€‰æ‹©æ–‡ä»¶
 	public String filestr = "";
 	public fileChooser(){
     	try{
 	    	JFileChooser jfc = new JFileChooser();
 	        jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES );  
-	        jfc.showDialog(new JLabel(), "Ñ¡Ôñ");  
+	        jfc.showDialog(new JLabel(), "é€‰æ‹©");  
 	        File file = jfc.getSelectedFile();  
 	        if(file.isDirectory()){  
-	            //System.out.println("ÎÄ¼ş¼Ğ:"+file.getAbsolutePath());
+	            //System.out.println("æ–‡ä»¶å¤¹:"+file.getAbsolutePath());
 	        	this.filestr = file.getAbsolutePath();
 	        }else if(file.isFile()){  
-	            //System.out.println("ÎÄ¼ş:"+file.getAbsolutePath());
+	            //System.out.println("æ–‡ä»¶:"+file.getAbsolutePath());
 	            this.filestr = file.getAbsolutePath();
 	        }  
 	        //System.out.println(jfc.getSelectedFile().getName());
@@ -196,7 +196,7 @@ public class UserJFrame extends JFrame{
 	MyShowPanel myshow;
     public UserJFrame()   
     {   
-    	super("Ê×Ò³");            
+    	super("é¦–é¡µ");            
         this.setSize(650,720);   
         this.setLocation(600,200);   
         this.setResizable(false);   
@@ -214,7 +214,7 @@ class MyShowPanel extends JPanel implements ActionListener,ItemListener{
 	static NewInputText newinputtext = new NewInputText();
 	static CalShortestPath shortestpath = new CalShortestPath();
 	static RandomWalk randomwalk = new RandomWalk();
-    static JTextArea text_user;                                //ÎÄ±¾Çø   
+    static JTextArea text_user;                                //æ–‡æœ¬åŒº   
     private JComboBox<Object> alternative;   
     private JScrollPane scrollPane;
     private Font font1;
@@ -224,17 +224,17 @@ class MyShowPanel extends JPanel implements ActionListener,ItemListener{
     public Vertex[] head;
     ReadFile file = new ReadFile();
     Graph graph;
-    JButton b_refresh = new JButton("Ë¢ĞÂÁĞ±í"); 
+    JButton b_refresh = new JButton("åˆ·æ–°åˆ—è¡¨"); 
     String filestr = "";
     public MyShowPanel(){  
-    	new FirstPage();   //Íê³ÉÊäÈë³õÊ¼³ÉÔ±     
+    	new FirstPage();   //å®Œæˆè¾“å…¥åˆå§‹æˆå‘˜     
     	font1 = new Font("SansSerif",Font.BOLD,16);
 		font2 = new Font("Serif",Font.BOLD,16);
         text_user = new JTextArea("",26,52);   
         text_user.setEditable(false);   
         scrollPane = new JScrollPane(text_user,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);   
         this.add(scrollPane);    
-        Object alter_content[] = {"Ñ¡Ôñ²Ù×÷","¹¦ÄÜĞèÇó1","¹¦ÄÜĞèÇó2","¹¦ÄÜĞèÇó3","¹¦ÄÜĞèÇó4","¹¦ÄÜĞèÇó5","¹¦ÄÜĞèÇó6"};   
+        Object alter_content[] = {"é€‰æ‹©æ“ä½œ","åŠŸèƒ½éœ€æ±‚1","åŠŸèƒ½éœ€æ±‚2","åŠŸèƒ½éœ€æ±‚3","åŠŸèƒ½éœ€æ±‚4","åŠŸèƒ½éœ€æ±‚5","åŠŸèƒ½éœ€æ±‚6"};   
         alternative = new JComboBox<Object>(alter_content);
         alternative.addItemListener(this);   
         alternative.setFont(font1);
@@ -248,12 +248,12 @@ class MyShowPanel extends JPanel implements ActionListener,ItemListener{
     @Override
     public void actionPerformed(ActionEvent e){   
         if (e.getSource()== b_refresh) {   
-           JOptionPane.showMessageDialog(this,"ÎŞĞèË¢ĞÂ,´ËÁĞ±íÒÑ¾­ÔÚÄúĞŞ¸ÄÊ±×Ô¶¯¸üĞÂ¹ı!");   
+           JOptionPane.showMessageDialog(this,"æ— éœ€åˆ·æ–°,æ­¤åˆ—è¡¨å·²ç»åœ¨æ‚¨ä¿®æ”¹æ—¶è‡ªåŠ¨æ›´æ–°è¿‡!");   
         }   
     }   
     @Override
-    public void itemStateChanged(ItemEvent e)            //ÔÚ×éºÏ¿òµÄÏÂÀ­ÁĞ±íÖĞÑ¡ÔñÊı¾İÏîÊ±´¥·¢Ö´ĞĞ   
-    {                                                    //ÊµÏÖItemListener½Ó¿ÚÖĞµÄ·½·¨   
+    public void itemStateChanged(ItemEvent e)            //åœ¨ç»„åˆæ¡†çš„ä¸‹æ‹‰åˆ—è¡¨ä¸­é€‰æ‹©æ•°æ®é¡¹æ—¶è§¦å‘æ‰§è¡Œ   
+    {                                                    //å®ç°ItemListeneræ¥å£ä¸­çš„æ–¹æ³•   
     	 if(e.getStateChange() == ItemEvent.SELECTED){
 	    	switch (alternative.getSelectedIndex()){   
 	        	case 0:
@@ -319,13 +319,13 @@ class MyShowPanel extends JPanel implements ActionListener,ItemListener{
    }
 }   
 
-class ShowDirectedGraph extends JFrame{     //Õ¹Ê¾ÓĞÏòÍ¼
+class ShowDirectedGraph extends JFrame{     //å±•ç¤ºæœ‰å‘å›¾
 	private static final long serialVersionUID = 1L;
 	JPanel MPanel; 
 	JScrollPane sp;
 	picDisplayPanel picPanel;
 	public ShowDirectedGraph(){
-		super("Õ¹Ê¾ÓĞÏòÍ¼");
+		super("å±•ç¤ºæœ‰å‘å›¾");
 		this.setSize(700,700);
 		this.setLocationRelativeTo(null);         
 		this.setResizable(true);
@@ -339,7 +339,7 @@ class ShowDirectedGraph extends JFrame{     //Õ¹Ê¾ÓĞÏòÍ¼
         this.add(MPanel);
 	}
 }
-//²éÑ¯ÇÅ½Ó´Ê
+//æŸ¥è¯¢æ¡¥æ¥è¯
 class QueryBridgeWords extends JFrame implements ActionListener,ItemListener{ 
 	private static final long serialVersionUID = 1L;
     private TextField word1;     
@@ -351,7 +351,7 @@ class QueryBridgeWords extends JFrame implements ActionListener,ItemListener{
     private Font font1;
     private Font font2;
     public QueryBridgeWords(){   
-        super("²éÑ¯ÇÅ½Ó´Ê");   
+        super("æŸ¥è¯¢æ¡¥æ¥è¯");   
         this.setSize(1400,795);
 		this.setLocationRelativeTo(null);         //set the frame container
 		this.setResizable(false);
@@ -364,7 +364,7 @@ class QueryBridgeWords extends JFrame implements ActionListener,ItemListener{
         scrollPane = new JScrollPane(text_user,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);   
         word1 = new TextField(18);   
         word2 = new TextField(18);   
-        submit = new JButton("Ìá½»"); 
+        submit = new JButton("æäº¤"); 
         submit.setFont(font1);
         text_user.setFont(font2);
         word1.setFont(font1);
@@ -385,7 +385,7 @@ class QueryBridgeWords extends JFrame implements ActionListener,ItemListener{
         setJMenuBar(new MenuBar().menuBar());
         submit.addActionListener(this);
     }
-    //½«ÇÅ½Ó´ÊÒÔÌØÊâµÄÑÕÉ«ÏÔÊ¾ÔÚÍ¼Æ¬ÖĞ
+    //å°†æ¡¥æ¥è¯ä»¥ç‰¹æ®Šçš„é¢œè‰²æ˜¾ç¤ºåœ¨å›¾ç‰‡ä¸­
     public void showDirectedGraph(String word1,String word2,String[] bridgeword){
 		GraphViz gv = new GraphViz();
         gv.addln(gv.start_graph());
@@ -445,7 +445,7 @@ class QueryBridgeWords extends JFrame implements ActionListener,ItemListener{
     public void itemStateChanged(ItemEvent e){   
     }  
 }
-//¸ù¾İÇÅ½Ó´ÊÉú³ÉĞÂÎÄ±¾
+//æ ¹æ®æ¡¥æ¥è¯ç”Ÿæˆæ–°æ–‡æœ¬
 class NewInputText extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	static JTextArea text_user;
@@ -456,7 +456,7 @@ class NewInputText extends JFrame implements ActionListener{
 	//static Lab1_Pair lab1 = new Lab1_Pair();
 	
 	public NewInputText(){                   
-		super("¸ù¾İÇÅ½Ó´ÊÉú³ÉĞÂÎÄ±¾");
+		super("æ ¹æ®æ¡¥æ¥è¯ç”Ÿæˆæ–°æ–‡æœ¬");
 		this.setSize(1400,795);
 		this.setLocationRelativeTo(null);    
 		this.setResizable(false);
@@ -464,7 +464,7 @@ class NewInputText extends JFrame implements ActionListener{
         text_user.setEditable(false); 
         text_user.setLineWrap(true);
         text_user.setWrapStyleWord(true);
-		tb = new JButton("Ìá½»");
+		tb = new JButton("æäº¤");
 		text = new TextField(50);
 		font1 = new Font("Serif",Font.BOLD,16);
 		font2 = new Font("Serif",Font.BOLD,25);
@@ -497,19 +497,19 @@ class NewInputText extends JFrame implements ActionListener{
 	      }
    }    
 }
-//¼ÆËã×î¶ÌÂ·¾¶
+//è®¡ç®—æœ€çŸ­è·¯å¾„
 class CalShortestPath extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
-	private JTextArea text_user;                                //ÎÄ±¾Çø    
+	private JTextArea text_user;                                //æ–‡æœ¬åŒº    
     private JScrollPane scrollPane; 
     private TextField word1,word2;
-    JButton submit = new JButton("²éÑ¯"); 
+    JButton submit = new JButton("æŸ¥è¯¢"); 
 	private Font font1;
 	private Font font2;
 	OutputStreamWriter os = null;
 	picDisplayPanel picPanel;
     public CalShortestPath(){
-    	super("¼ÆËã×î¶ÌÂ·¾¶");
+    	super("è®¡ç®—æœ€çŸ­è·¯å¾„");
     	this.setSize(1400,795);
 		this.setLocationRelativeTo(null);        
 		this.setResizable(false);
@@ -543,7 +543,7 @@ class CalShortestPath extends JFrame implements ActionListener{
         submit.addActionListener(this);
         setJMenuBar(new MenuBar().menuBar());
     }
-    //½«×î¶ÌÂ·¾¶ÒÔÍ»³öµÄ·½Ê½ÏÔÊ¾ÔÚÍ¼ÖĞ
+    //å°†æœ€çŸ­è·¯å¾„ä»¥çªå‡ºçš„æ–¹å¼æ˜¾ç¤ºåœ¨å›¾ä¸­
     public void showDirectedGraph_2word(){
 		GraphViz gv = new GraphViz();
         gv.addln(gv.start_graph());
@@ -590,7 +590,7 @@ class CalShortestPath extends JFrame implements ActionListener{
 		}		  
     }
 }
-//Ëæ»úÓÎ×ß
+//éšæœºæ¸¸èµ°
 class RandomWalk extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private JTextArea text_user;
@@ -610,7 +610,7 @@ class RandomWalk extends JFrame implements ActionListener{
 	OutputStreamWriter os = null;
 	picDisplayPanel picPanel;
 	public RandomWalk(){
-    	super("Ëæ»úÓÎ×ß");
+    	super("éšæœºæ¸¸èµ°");
     	this.setSize(1400,795);
 		this.setLocationRelativeTo(null);         //set the frame container
 		this.setResizable(false);
@@ -659,7 +659,7 @@ class RandomWalk extends JFrame implements ActionListener{
 		}
 		return false;
 	}
-	//½«Ëæ»úÓÎ×ßµÄÂ·¾¶ÒÔÍ»³öµÄ·½Ê½Õ¹Ê¾ÔÚÍ¼ÖĞ
+	//å°†éšæœºæ¸¸èµ°çš„è·¯å¾„ä»¥çªå‡ºçš„æ–¹å¼å±•ç¤ºåœ¨å›¾ä¸­
 	public void showDirectedGraph(int num){
 		GraphViz gv = new GraphViz();
         gv.addln(gv.start_graph());
@@ -698,14 +698,14 @@ class RandomWalk extends JFrame implements ActionListener{
 		    		 try{os = new OutputStreamWriter(new FileOutputStream("datarandom.txt"));
 		    		 os.write(string);os.close();}
 		    		 catch(IOException e1){}
-		    		 string += "\nÒÑµ½Â·µÄ¾¡Í·£¡£¡£¡";
+		    		 string += "\nå·²åˆ°è·¯çš„å°½å¤´ï¼ï¼ï¼";
 		    		 text_user.setText(string);
 		    		 flag = true;
 		    		 /*showDirectedGraph(step);
 		    		 picDisplayPanel.setPic(Lab1_Pair.pathtext+"\\outRDW.gif");*/
 		    	 }
 	    	 }
-	    	 else if(!flag){text_user.setText("ÇëÏÈÉú³ÉÍ¼£¬ÔÙÑ¡ÓÃ´Ë¹¦ÄÜ£¡£¡£¡");}
+	    	 else if(!flag){text_user.setText("è¯·å…ˆç”Ÿæˆå›¾ï¼Œå†é€‰ç”¨æ­¤åŠŸèƒ½ï¼ï¼ï¼");}
 	     }
 	     else if(e.getSource() == stop){
 	    	 flag = true;
@@ -724,7 +724,7 @@ class RandomWalk extends JFrame implements ActionListener{
 	     }
    }
 }
-//Õ¹Ê¾Í¼Æ¬Panel
+//å±•ç¤ºå›¾ç‰‡Panel
 class picDisplayPanel extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public static JLabel picLabel;
@@ -746,7 +746,7 @@ class picDisplayPanel extends JPanel{
 			picLabel.setIcon(pic);
 			picLabel.repaint();
 		} catch (Exception e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			//e.printStackTrace();
 		}
 	}

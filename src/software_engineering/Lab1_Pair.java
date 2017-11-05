@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.PriorityQueue;  
 import java.util.Comparator; 
-/**¶ÁÈ¡Ô­Ê¼ÎÄ¼ş£¬²¢½«Æä×ª»¯Îª±ê×¼ÎÄ¼şdata.txt*/
+/**è¯»å–åŸå§‹æ–‡ä»¶ï¼Œå¹¶å°†å…¶è½¬åŒ–ä¸ºæ ‡å‡†æ–‡ä»¶data.txt*/
 class ReadFile{
 	public void transformFile(String string){
 		try{
@@ -50,35 +50,35 @@ class ReadFile{
 		}
 	}
 }
-//Í¼µÄ±ß½áµãÀà
+//å›¾çš„è¾¹ç»“ç‚¹ç±»
 class Edge{
-	/**ÁÚ½Ó¶¥µãĞòºÅ*/
+	/**é‚»æ¥é¡¶ç‚¹åºå·*/
 	protected int verAdj;
-	/**ÁÚ½Ó¶¥µãÃû³Æ*/
+	/**é‚»æ¥é¡¶ç‚¹åç§°*/
 	protected String Name;
-	/**±ßµÄÈ¨Öµ*/
+	/**è¾¹çš„æƒå€¼*/
 	protected int cost;
-	/**ÏÂÒ»¸ö±ß½áµã*/
+	/**ä¸‹ä¸€ä¸ªè¾¹ç»“ç‚¹*/
 	protected Edge link;
 }
-//¶¥µã±íÖĞµÄ½áµãÀà
+//é¡¶ç‚¹è¡¨ä¸­çš„ç»“ç‚¹ç±»
 class Vertex{
-	/**¶¥µãĞòºÅ*/
+	/**é¡¶ç‚¹åºå·*/
 	protected int verName;
-	/**¶¥µãÃû³Æ**/
+	/**é¡¶ç‚¹åç§°**/
 	protected String Name;
-	/**±ßÁ´±íµÄÍ·Ö¸Õë*/
+	/**è¾¹é“¾è¡¨çš„å¤´æŒ‡é’ˆ*/
 	protected Edge adjacent;
 }
-/**ÒÔÁÚ½Ó±íµÄĞÎÊ½´æ´¢Í¼½á¹¹*/
+/**ä»¥é‚»æ¥è¡¨çš„å½¢å¼å­˜å‚¨å›¾ç»“æ„*/
 class Graph{
-	/**Ö¸Ïò¶¥µã±íµÄÒıÓÃ*/
+	/**æŒ‡å‘é¡¶ç‚¹è¡¨çš„å¼•ç”¨*/
 	public Vertex[] head;
-	/*µ±Ç°¶¥µãµÄ¸öÊı*/
+	/*å½“å‰é¡¶ç‚¹çš„ä¸ªæ•°*/
 	private int vertexNum;
-	/*ÎÄ¼şÂ·¾¶*/
+	/*æ–‡ä»¶è·¯å¾„*/
 	private String str;
-	/**¹¹Ôì·½·¨*/
+	/**æ„é€ æ–¹æ³•*/
 	Lab1_Pair lab1 = new Lab1_Pair();
 	public Graph(String string){
 		this.str = string;
@@ -171,7 +171,7 @@ class Graph{
 		//System.out.println(a);
 		return this.vertexNum;
 	}
-	/**Õ¹Ê¾ÓĞÏòÍ¼*/
+	/**å±•ç¤ºæœ‰å‘å›¾*/
 	public void showDirectedGraph(){
 		GraphViz gv = new GraphViz();
         gv.addln(gv.start_graph());
@@ -219,16 +219,16 @@ class Graph{
 }
 
 class BFS{
-	/**Ö¸Ïò¶¥µã±íµÄÒıÓÃ*/
+	/**æŒ‡å‘é¡¶ç‚¹è¡¨çš„å¼•ç”¨*/
 	private Vertex[] head;
-	/*µ±Ç°¶¥µãµÄ¸öÊı*/
+	/*å½“å‰é¡¶ç‚¹çš„ä¸ªæ•°*/
 	private int vertexNum;
 	
 	public BFS(Vertex[] H,int num){
 		this.head = H;
 		this.vertexNum = num;
 	}
-	//µÃµ½µÚÒ»¸öÁÚ½Ó½áµãµÄÏÂ±ê
+	//å¾—åˆ°ç¬¬ä¸€ä¸ªé‚»æ¥ç»“ç‚¹çš„ä¸‹æ ‡
     public int getFirstNeighbor(int index){
     	if (head[index].adjacent != null){
     		return head[index].adjacent.verAdj;
@@ -236,15 +236,15 @@ class BFS{
         return -1;
     }
 
-	//Ë½ÓĞº¯Êı£¬¹ã¶ÈÓÅÏÈ±éÀú
+	//ç§æœ‰å‡½æ•°ï¼Œå¹¿åº¦ä¼˜å…ˆéå†
     private String[] broadFirstSearch(boolean[] isVisited,int i,String destination){
         int u,flag = 0;
         String[] str;
         LinkedList<Integer> queue = new LinkedList<Integer>();
-        //·ÃÎÊ½áµãi
+        //è®¿é—®ç»“ç‚¹i
         //System.out.print(getValueByIndex(i)+"  ");
         isVisited[i] = true;
-        //½áµãÈë¶ÓÁĞ
+        //ç»“ç‚¹å…¥é˜Ÿåˆ—
         //queue.addLast(i);
         //w = getFirstNeighbor(i);
         Edge p = null;
@@ -288,7 +288,7 @@ class BFS{
         return str;
     }
     
-    //¶ÔÍâ¹«¿ªº¯Êı£¬¹ã¶ÈÓÅÏÈ±éÀú
+    //å¯¹å¤–å…¬å¼€å‡½æ•°ï¼Œå¹¿åº¦ä¼˜å…ˆéå†
     public String[] broadFirstSearch(String word1,String word2){
     	boolean[] isVisited = new boolean[this.vertexNum];
     	String[] str;
@@ -411,9 +411,9 @@ class Dij{
 
 public class Lab1_Pair{
 	public static String pathtext = System.getProperty("user.dir");
-	/**Ö¸Ïò¶¥µã±íµÄÒıÓÃ*/
+	/**æŒ‡å‘é¡¶ç‚¹è¡¨çš„å¼•ç”¨*/
 	public static Vertex[] head;
-	/*µ±Ç°¶¥µãµÄ¸öÊı*/
+	/*å½“å‰é¡¶ç‚¹çš„ä¸ªæ•°*/
 	public static int vertexNum;
 	private static String[] str;
 	private static boolean flag = false;
@@ -425,44 +425,75 @@ public class Lab1_Pair{
 		//System.out.println(System.getProperty("user.dir"));
 	}
 	
-	/**²éÑ¯ÇÅ½Ó´Ê*/
-	public static String queryBridgeWords(String word1,String word2){
+	/** æŸ¥è¯¢æ¡¥æ¥è¯ */
+	public static String queryBridgeWords(String word1, String word2)
+	{
 		String str_ = "";
 		word1 = word1.toLowerCase();
-		//if(str2[0] >= 'A'&&str2[0] <='Z')
+		// if(str2[0] >= 'A'&&str2[0] <='Z')
 		word2 = word2.toLowerCase();
-		BFS bfsSearch = new BFS(head,vertexNum);
+		BFS bfsSearch = new BFS(head, vertexNum);
 		str = bfsSearch.broadFirstSearch(word1, word2);
-		if(str[0].equals("-1")&&!flag)
+		if (str[0].equals("-1"))
 			str_ = "-1";
-		else if(str[0].equals("0")&&!flag)	
+		else if (str[0].equals("0"))
 			str_ = "0";
-		else if(!flag){
-			//System.out.println("The bridge words from word1 to word2 are:");
-			for(int i = 0;i < str.length&&str[i] != null;i++){
-				str_ += (str[i]+" ");
+		else
+		{
+			// System.out.println("The bridge words from word1 to word2 are:");
+			for (int i = 0; str[i] != null; i++)
+			{
+				str_ += (str[i] + " ");
 			}
 		}
 		return str_;
 	}
-	/**¸ù¾İbridge word Éú³ÉĞÂÎÄ±¾*/
-	public static String generateNewText(String inputText){
+	
+	public static String queryWords(String word1, String word2)
+	{
+		String str_ = "";
+		word1 = word1.toLowerCase();
+		// if(str2[0] >= 'A'&&str2[0] <='Z')
+		word2 = word2.toLowerCase();
+		BFS bfsSearch = new BFS(head, vertexNum);
+		str = bfsSearch.broadFirstSearch(word1, word2);
+		if (str[0].equals("-1") && !flag)
+			str_ = "-1";
+		else if (str[0].equals("0") && !flag)
+			str_ = "0";
+		else if (!flag)
+		{
+			// System.out.println("The bridge words from word1 to word2 are:");
+			for (int i = 0; i < str.length && str[i] != null; i++)
+			{
+				str_ += (str[i] + " ");
+			}
+		}
+		return str_;
+	}
+
+	/** æ ¹æ®bridge word ç”Ÿæˆæ–°æ–‡æœ¬ */
+	public static String generateNewText(String inputText)
+	{
 		String[] str1 = inputText.split(" ");
-		//boolean Flag = false;
-		/*if(str1[0].charAt(0) >= 'A'&& str1[0].charAt(0) <= 'Z'){
-			Flag = true;
-		}*/
-		String[] str2 = new String[2*str1.length];
+		// boolean Flag = false;
+		/*
+		 * if(str1[0].charAt(0) >= 'A'&& str1[0].charAt(0) <= 'Z'){ Flag = true;
+		 * }
+		 */
+		String[] str2 = new String[2 * str1.length];
 		int j = 0;
 		flag = true;
 		int i;
-		for(i = 0;i < str1.length-1;i++){
-			queryBridgeWords(str1[i].toLowerCase(),str1[i+1].toLowerCase());
-			if(str[0].equals("0")||str[0].equals("-1")){
+		for (i = 0; i < str1.length - 1; i++)
+		{
+			queryWords(str1[i].toLowerCase(), str1[i + 1].toLowerCase());
+			if (str[0].equals("0") || str[0].equals("-1"))
+			{
 				str2[j++] = str1[i];
-				//str2[j++] = str1[i+1];
-			}
-			else{
+				// str2[j++] = str1[i+1];
+			} else
+			{
 				str2[j++] = str1[i];
 				str2[j++] = str[0];
 			}
@@ -470,13 +501,15 @@ public class Lab1_Pair{
 		flag = false;
 		str2[j] = str1[i];
 		String string = "";
-		for(i = 0;i < str2.length&&str2[i] != null;i++){
-			string+=str2[i];
-			string+=" ";
+		for (i = 0; i < str2.length && str2[i] != null; i++)
+		{
+			string += str2[i];
+			string += " ";
 		}
 		return string;
 	}
-	/**¼ÆËãÁ½¸öµ¥´ÊÖ®¼äµÄ×î¶ÌÂ·¾¶*/
+
+	/**è®¡ç®—ä¸¤ä¸ªå•è¯ä¹‹é—´çš„æœ€çŸ­è·¯å¾„*/
 	public static String calcShortestPath(String word1,String word2){
 		int INF = 9999;
 		String ans = "";
@@ -490,11 +523,11 @@ public class Lab1_Pair{
 				w2 = i;
 		}
 		if(w1 == -1 || w2 == -1)
-			return "ÎÄ±¾ÖĞ²»´æÔÚÊäÈëµÄÄ³¸ö´Ê";
+			return "æ–‡æœ¬ä¸­ä¸å­˜åœ¨è¾“å…¥çš„æŸä¸ªè¯";
 		Dij D = new Dij(vertexNum);
 		D.dijkstra(w1,head);
 		if(D.dist[w2].d == INF){
-			ans += "Ã»ÓĞÂ·¾¶";
+			ans += "æ²¡æœ‰è·¯å¾„";
 			return ans;
 		}
 		waypoint = new ArrayList<ArrayList<Integer>>();
@@ -510,7 +543,7 @@ public class Lab1_Pair{
 		}
 		return ans;
 	}
-	/**¼ÆËãÒ»¸öµ¥´Êµ½ÆäËûÖ®¼äµÄ×î¶ÌÂ·¾¶*/
+	/**è®¡ç®—ä¸€ä¸ªå•è¯åˆ°å…¶ä»–ä¹‹é—´çš„æœ€çŸ­è·¯å¾„*/
 	public static String calcShortestPath_Oneword(String word){
 		int wd = -1;
 		String ans = "";
@@ -520,7 +553,7 @@ public class Lab1_Pair{
 				wd = i;
 		}
 		if(wd == -1)
-			return "ÎÄ±¾ÖĞ²»´æÔÚÊäÈëµÄ´Ê";
+			return "æ–‡æœ¬ä¸­ä¸å­˜åœ¨è¾“å…¥çš„è¯";
 		Dij D = new Dij(vertexNum);
 		D.dijkstra(wd,head);
 		for(int i =0;i<vertexNum;i++){
@@ -531,7 +564,7 @@ public class Lab1_Pair{
 		}
 		return ans;
 	}
-	/**Ëæ»úÓÎ×ß*/
+	/**éšæœºæ¸¸èµ°*/
 	public static String randomWalk(){
 		int r = (int)(Math.random()*vertexNum);
 		String string = "";
@@ -543,7 +576,7 @@ public class Lab1_Pair{
 			string += head[r].Name;
 			string += " ";
 			Edge p = head[r].adjacent;
-			while(p != null){    /**Ëæ»úĞÔÇ·¿¼ÂÇ*/
+			while(p != null){    /**éšæœºæ€§æ¬ è€ƒè™‘*/
 				//System.out.print(head[p.verAdj].Name+" ");
 				string += head[p.verAdj].Name;
 				string += " ";
